@@ -63,7 +63,7 @@ body {
   transition: transform 5s ease-in-out;
   --total: 8;
 }
-.container .wheel .slice {
+.container .wheel .wheel_segment {
   position: absolute;
   width: 50%;
   height: 50%;
@@ -77,7 +77,7 @@ body {
   user-select: none;
   cursor: pointer;
 }
-.container .wheel .slice span {
+.container .wheel .wheel_segment span {
   position: relative;
   transform: rotate(225deg);
   overflow: hidden;
