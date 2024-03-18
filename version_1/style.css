@@ -1,90 +1,97 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
 * {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; 
 }
+
 body {
+  align-items: center;
+  background: #333;
   display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  background: #333;
 }
+
 .container {
+  align-items: center;
+  display: flex;
+  height: 400px;
+  justify-content: center;
   position: relative;
   width: 400px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
 .container .spinBtn {
-  position: absolute;
-  width: 60px;
-  height: 60px;
+  align-items: center;
   background: #fff;
   border-radius: 50%;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-weight: 600;
+  border: 4px solid rgb(0, 0, 0, 0.75);
   color: #333;
-  letter-spacing: 0.1em;
-  border: 4px solid rgb(0,0,0,0.75);
   cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  height: 60px;
+  justify-content: center;
+  letter-spacing: 0.1em;
+  position: absolute;
+  text-transform: uppercase;
   user-select: none;
+  width: 60px;
+  z-index: 10;
 }
+
 .container .spinBtn::before {
+  background: #fff;
+  clip-path: polygon(100% 52%, 0 28%, 0 76%);
   content: '';
+  height: 30px;
   position: absolute;
   right: -26px;
   width: 30px;
-  height: 30px;
-  background: #fff;
-  clip-path: polygon(100% 52%, 0 28%, 0 76%);
 }
+
 .container .wheel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  --total: 8;
   background: #333;
   border-radius: 50%;
-  overflow: hidden;
   box-shadow: 0 0 0 5px #333,
-  0 0 0 12px #fff,
-  0 0 0 15px #111;
-  transition: transform 5s ease-in-out;
-  --total: 8;
-}
-.container .wheel .wheel_segment {
+    0 0 0 12px #fff,
+    0 0 0 15px #111;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
   position: absolute;
-  width: 50%;
-  height: 50%;
+  top: 0;
+  transition: transform 5s ease-in-out;
+  width: 100%;
+}
+
+.container .wheel .wheel_segment {
+  align-items: center;
   background: var(--clr);
+  clip-path: polygon(0 0, 59% 0, 100% 100%, 0 59%);
+  cursor: pointer;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  position: absolute;
   transform-origin: bottom right;
   transform: rotate(calc(360deg / var(--total) * var(--i)));
-  clip-path: polygon(0 0, 59% 0, 100% 100%, 0 59%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   user-select: none;
-  cursor: pointer;
+  width: 50%;
 }
+
 .container .wheel .wheel_segment span {
-  position: relative;
-  transform: rotate(225deg);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  color: #fff;
   font-size: 1.2em;
   font-weight: 500;
-  color: #fff;
-  text-shadow: 3px 5px 2px rgb(0,0,0,0.15);
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  text-shadow: 3px 5px 2px rgb(0, 0, 0, 0.15);
+  transform: rotate(225deg);
+  white-space: nowrap;
 }
