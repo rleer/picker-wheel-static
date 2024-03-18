@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Picker Wheel</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="spinBtn">Spin</div>
+    <div class="wheel" style="--size:400;">
+      <div class="wheel_segment" data-value="John1" style="--offset: 0; --value: 25; --bg: #68ABD2">
+        <label class="segment_label">John</label>
+      </div>
+      <div class="wheel_segment" style="--offset: 25; --value: 25; --bg: #F9A561;">
+        <label class="segment_label">Alice</label>
+      </div>
+      <div class="wheel_segment" style="--offset: 50; --value: 25; --bg: #F4F4F4;">
+        <label class="segment_label">Michael</label>
+      </div>
+      <div class="wheel_segment" style="--offset: 75; --value: 25; --bg: #93C2DC;">
+        <label class="segment_label">Sarah</label>
+      </div>
+      <!-- <div class="wheel_segment" style="--offset: 0; --value: 55; --over50: 1;"></div>
+      <div class="wheel_segment" style="--offset: 55; --value: 10; --bg: orange;"></div>
+      <div class="wheel_segment" style="--offset: 65; --value: 20; --bg: #22a7f0;"></div>
+      <div class="wheel_segment" style="--offset: 85; --value: 15; --bg: #db0a5b;"></div> -->
+    </div> 
+  </div>
+  <script>
+    let wheel = document.querySelector('.wheel');
+    let spinBtn = document.querySelector('.spinBtn');
+    let value = Math.floor(Math.random() * 360);
+
+    spinBtn.onclick = function() {            
+      value += 3600
+      console.log(value);
+      wheel.style.transform = "rotate("+ value + "deg)";
+      value += Math.floor(Math.random() * 360);
+    }
+  </script>
+</body>
+</html>
